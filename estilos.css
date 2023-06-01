@@ -1,0 +1,114 @@
+body{ color:blueviolet;
+     background-color: aqua}
+h1{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 52px;
+text-align: justify;}
+p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    padding: 11px;
+    margin: 27px;
+}   
+.container-nav {
+    display: flex;
+    padding: 10px;
+    height: 50px;
+    background-color: black;
+    }
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    }
+    .brand {
+    display: flex;
+    align-items: center;
+    }
+    li>a {
+    padding: 8px 24px;
+    }
+    li {
+    list-style-type: none;
+    }
+    a {
+    color: white;
+    text-decoration:none;
+    }
+    .nav-links {
+    display: flex;
+    align-items: center;
+    }
+    .button-menu-toggle {
+    display: none;
+    }
+    @media (max-width: 768px) {
+        .column {
+        flex: 100%;
+        }
+        .nav-links {
+        display: none;
+        }
+        .button-menu-toggle {
+        display: block;
+        background-color: white;
+        border:none;
+        border-radius: 50px;
+        padding: 0 24px;
+        font-family: monospace;
+        font-weight: bold;
+        font-size: 20px;
+        }
+        .nav-links.nav-links-responsive {
+        position: absolute;
+        display: flex;
+        background-color: rgba(20,20,20,0.95);
+        width: 100%;
+        height: 100%;
+        top: 70px;
+        left: 0;
+        flex-direction: column;
+        padding-top: 200px;
+        align-items: center;
+        gap:70px;
+        font-size: 40px;
+        }
+        }
+        nav a:hover {
+            color: darkred;
+            }    
+            .container-galeria {
+                display: flex; /*para que este una al lado de la otra*/
+                width: 100%; /* ancho */
+                justify-content: space-around; /* espacio entre cada imagen */
+                flex-wrap: wrap; /* */
+                max-width: 1000px; /* */
+                margin: auto; /* */
+            }
+            
+            .viaje_img {
+                width: 300px; /* este es el tamaño especifico de la imagen */
+                height: 200px; /* este es el tamaño especifico de la imagen */
+                margin-bottom: 30px; 
+                object-fit: cover; /* por defecto el valor es fill, ocuparia todo el espacio de width y height, 
+                al darle contain entra la imagen tal como es. Sin embargo
+                COVER hace que no se distorcione, entrando justo en ese alto y ancho, mostrando
+                el centro de la imagen. EN RESUMEN: usar esto cuando tengamos imagenes
+                de diferentes tamaños*/
+                filter: brightness(80%); /* */
+                cursor: pointer; /* para que se abra la imagen original al darle click, falta agregar el modal*/
+                animation: escalar 1.5s infinite alternate; /* es para darle la animacion, agregando el
+                alternate al final, la animacion no se vuelve tosca*/
+            }
+            
+            @keyframes escalar {
+               to {
+                  transform: scale(1);
+               }
+               from {
+                  transform: scale(1.1);
+               }
+            }
+            
+            div img:hover { /* al pasar el cursor sobre la imagen vuelve a tomar el brillo puesto abajo, osea del 100%, NO ESTA FUNCIONANDO, REVISAR POR QUE*/
+               filter: brightness (100%);
+            }
